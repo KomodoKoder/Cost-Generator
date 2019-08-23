@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="bootstrap4.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/aad044c6e5.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="row no-gutters container-fluid" >
+    <div class="col-sm-12 col-md-3 pl-2 pr-2" id="forms-panel">
+      <!-- New cost sqm form -->
+      <div class="row no-gutters">
+        <form class="col-md-12" id="sqmCostForm">
+          <div class="card mt-4 ml-2 mr-4 form-card">
+            <div class="card-header-sm form-header rounded text-light">
+              <div class="row p-3">
+                <div class="col-md-8 ml-2">
+                  <h3>m2</h3>
+                  <span class="text-muted text-sm">cost</span>
+                </div>
+                <div class="col-md-3 text-right" id="toggle-form-sqm">
+                  <i class="fa fa-2x fa-plus-square text-green-test form-toggle mt-2"></i>
+                </div>
+              </div>
+            </div>
+            <div class="card-body toggle-hide text-dark form-body bg-light" id="sqm-form-body">
+                <div class="form-group">
+                  <label for="material">Material</label>
+                  <input type="text" name="material" class="form-control" id="material-sqm-form">
+                </div>
+                <div class="form-group">
+                  <label for="supplier">Supplier</label>
+                  <input type="text" name="supplier" class="form-control" id="supplier-sqm-form">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" class="form-control" id="price-sqm-form">
+                </div>
+                <div class="form-group" id="price-type">
+                  <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="price-options" id="price-m2" val>
+                    <label for="price-options" class="form-check-label">kr/m2</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="price-options" id="price-st" val>
+                    <label for="price-options" class="form-check-label">kr/st</label>
+                  </div>
+                </div>
+                <div class="toggle-hide" id="m2-form">
+                  <div class="form-group">
+                    <label for="sqm">Area m/2</label>
+                    <input type="number" name="sqm" class="form-control" id="area-sqm-form">
+                  </div>
+                </div>
+                <div class="toggle-hide" id="st-form">
+                  <div class="form-group">
+                    <label for="sqm">Area m/2</label>
+                    <input type="number" name="sqm" class="form-control" id="area-st-sqm-form">
+                  </div>
+                  <div class="form-group">
+                    <label for="width">Width</label>
+                    <input type="number" name="width" class="form-control" id="width-sqm-form">
+                  </div>
+                  <div class="form-group">
+                    <label for="length">length</label>
+                    <input type="number" name="length" class="form-control" id="length-sqm-form">
+                  </div>
+                </div>
+                <button type="submit" name="submitSqm" class="btn btn-primary form-submit btn-block
+                ">
+                  <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- New cost st form -->
+
+        <div class="row no-gutters">
+          <form class="col-md-12" id="stCostForm">
+            <div class="card mt-3 ml-2 mr-4 form-card">
+              <div class="card-header-sm text-light form-header rounded">
+                <div class="row no-gutters p-3">
+                  <div class="col-md-8 ml-2">
+                    <h3>st</h3>
+                    <span class="text-muted text-sm">cost</span>
+                  </div>
+                  <div class="col-md-3 text-right" id="toggle-form-st">
+                    <i class="fa fa-2x mt-2 fa-plus-square text-green-test form-toggle"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body toggle-hide bg-light text-dark form-body" id="st-form-body">
+                  <div class="form-group">
+                    <label for="material">Material</label>
+                    <input type="text" name="material" class="form-control" id="material-st-form">
+                  </div>
+                  <div class="form-group">
+                    <label for="supplier">Supplier</label>
+                    <input type="text" name="supplier" class="form-control" id="supplier-st-form">
+                  </div>
+                  <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" class="form-control" id="price-st-form">
+                  </div>
+                  <div class="form-group" id="price-type">
+                    <label for="">Spaced Member?</label>
+                    <div class="form-check form-check-inline">
+                      <input type="radio" class="form-check-input" name="spaced-member" id="is-spaced" val>
+                      <label for="yes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input type="radio" class="form-check-input" name="spaced-member" id="not-spaced" val>
+                      <label for="not-spaced" class="form-check-label">No</label>
+                    </div>
+                  </div>
+                  <div class="toggle-hide" id="st-form-not-spaced">
+                    <div class="form-group">
+                      <label for="amount">Amount</label>
+                      <input type="number" name="price" class="form-control" id="amount-st-form">
+                    </div>
+                  </div>
+                  <div class="toggle-hide" id="st-form-spaced">
+                    <div class="form-group">
+                      <label for="spacing">Spacing</label>
+                      <input type="number" name="spacing" class="form-control" id="spacing-st-form">
+                    </div>
+                    <div class="form-group">
+                      <label for="bays">Bays</label>
+                      <input type="number" name="bays" class="form-control" value="1" id="bays-st-form">
+                    </div>
+                    <div class="form-group">
+                      <label for="total-length">Total Length</label>
+                      <input type="number" name="total-length" class="form-control" id="total-length-st-form">
+                    </div>
+                  </div>
+                  <button type="submit" name="submitSt" class="btn btn-primary btn-block form-submit" id="submitSt">
+                    <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+      <!-- New Cost Lm form -->
+
+      <div class="row no-gutters">
+        <form class="col-md-12" id="lmCostForm">
+          <div class="card mt-3 mb-4 ml-2 mr-4 form-card">
+            <div class="card-header-sm text-light form-header rounded">
+              <div class="row no-gutters p-3">
+                <div class="col-md-8 ml-2">
+                  <h3>lm</h3>
+                  <span class="text-muted text-sm">cost</span>
+                </div>
+                <div class="col-md-3 text-right" id="toggle-form-lm">
+                  <i class="fa fa-2x mt-2 fa-plus-square text-green-test form-toggle"></i>
+                </div>
+              </div>
+            </div>
+            <div class="card-body toggle-hide text-dark form-body bg-light" id="lm-form-body">
+              <form class="col-md-12">
+                <div class="form-group">
+                  <label for="material">Material</label>
+                  <input type="text" name="material" class="form-control" id="material-lm-form">
+                </div>
+                <div class="form-group">
+                  <label for="supplier">Supplier</label>
+                  <input type="text" name="supplier" class="form-control" id="supplier-lm-form">
+                </div>
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="number" name="price" class="form-control" id="price-lm-form">
+                </div>
+                <div class="form-group">
+                  <label for="amount">Total Length</label>
+                  <input type="number" name="price" class="form-control" id="total-length-lm-form">
+                </div>
+                <button type="submit" name="submitLm" class="btn btn-primary btn-block form-submit" id="submitLm">
+                  <i class="fa fa-calculator fa-2x" aria-hidden="true"></i>
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> <!-- End Forms Column -->
+      <div class="col-sm-12 col-md-12 pl-2 pr-2 ml-auto mt-4" id="table-panel">
+        <div id="sidebar-toggle" data-toggle="collapse" data-target="#forms-panel">
+          <i class="fa fa-arrow-right text-light" aria-hidden="true" id="show-arrow"></i>
+        </div>
+        <table class="table table-striped">
+          <thead class="bg-ocean text-light pr-4">
+            <tr>
+              <th scope="col">Material</th>
+              <th scope="col">Supplier</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Price</th>
+              <th scope="col">Cost</th>
+              <th scope="col" class="text-light text-center">edit</th>
+              <th scope="col" class="text-light text-center">select</th>
+              <th scope="col" class="text-light text-center">delete</th>
+
+            </tr>
+          </thead>
+          <tbody id="table-area" class="">
+
+          </tbody>
+        </table>
+        <div class="row no-gutters">
+          <div class="col-md-4 pt-2 ml-auto fixed-bottom">
+            <div class="card border ml-auto rounded">
+              <div class="card-header text-white p-0 m-0 rounded">
+                <div class="row no-gutters">
+                  <div class="col-md-6 bg-navy p-3 text-center">
+                    Total Cost
+                  </div>
+                  <div class="col-md-6 text-center text-dark p-3 border-4fa6ed" id="total">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    type="text/javascript"
+    src="sandbox.js">
+  </script>
+</body>
+</html
